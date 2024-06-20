@@ -24,6 +24,7 @@ const addHidden = function () {
   overlay.classList.add("hidden");
 };
 
+//adds event listener to each button
 for (let i = 0; i < btnsOpenModal.length; i++)
   btnsOpenModal[i].addEventListener("click", removeHidden);
 
