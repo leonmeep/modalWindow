@@ -13,7 +13,7 @@ const overlay = docQS(".overlay");
 const btnCloseModal = docQS(".close-modal");
 const btnsOpenModal = docQSA(".show-modal");
 
-//function that removes hidden class on modal
+//function that removes hidden class
 const removeHidden = function () {
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
@@ -30,3 +30,10 @@ for (let i = 0; i < btnsOpenModal.length; i++)
 
 btnCloseModal.addEventListener("click", addHidden);
 overlay.addEventListener("click", addHidden);
+
+//ESC key to close the modal
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+    addHidden();
+  }
+});
